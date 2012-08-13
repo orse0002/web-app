@@ -6,7 +6,6 @@ body{
 	color:#fff;
 	background: #2c2431 url('../images/flare.jpg') no-repeat top center;
 	background-size: cover;
-	
 }
 
 h1{
@@ -75,11 +74,7 @@ div.quest{
 
 
 /*
-
 change p to black
 position p absolute, fix location
 control size of p to fit in white area.
-
-
-
 */

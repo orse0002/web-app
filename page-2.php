@@ -1,5 +1,15 @@
 <?php
+/**
+*Small Description of File:
+*The wicked wonderful awesome magic ball!
+*
+*@author Patrick Orser <patrickorser@gmail.com>
+*@copyright 2012 A Group of Moving Pictures
+8@license BSD-3-Clause <http://spdx.org/licenses/BSD-3-Clausess>
+*@version 1.0.0
+*@package Wicked Wonderful Awesome Magic Ball
 
+*/
 require_once 'includes/validate.php';
 require_once 'includes/db.php';
 
@@ -9,7 +19,7 @@ $sql=$db->query('
 		ORDER BY RAND() LIMIT 1
 ');
 
-$results=$sql->fetchAll();
+$results=$sql->fetch();
 
 ?><!DOCTYPE HTML>
 <html>
@@ -23,22 +33,21 @@ $results=$sql->fetchAll();
 	<h1 class="title">Magic Ball!!!!</h1>
     <?php if ($complete) : ?>
 	<?php else :?>
-      <div class="center">
-	 <figure>
-     	<img src="images/ball-2.png" >
-     <figcaption><?php echo $results ['choices'] ?></figcaption>
-       </figure>
-    
-    <form method="post" action="page-2.php">
-		<div class="quest">
-			<label for="wish">Make Another Wish?<?php if (isset($errors['wish'])) : ?> <strong>is required</strong><?php endif; ?></label>
-			<textarea id="wish" name="wish" required></textarea>
-		</div>
-			<button id="add" type="submit">Submit</button>
-</form>
-    <?php endif;?>
-    
- </div>
+     <div class="center">
+         <figure>
+            <img src="images/ball-2.png" >
+            <figcaption><?php echo $results ['choices'] ?></figcaption>
+          </figure>
+        
+        <form method="post" action="page-2.php">
+            <div class="quest">
+                <label for="wish">Make Another Wish?<?php if (isset($errors['wish'])) : ?> <strong>is required</strong><?php endif; ?></label>
+                <textarea id="wish" name="wish" required></textarea>
+            </div>
+            <button id="add" type="submit">Submit</button>
+        </form>
+        <?php endif;?>
+     </div>
 
 	<footer><img src="images/cp.png"> 2012 GMP</footer>
 
